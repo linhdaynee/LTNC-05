@@ -1,0 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int n; cin>>n;
+    vector<int> v;
+    for (int i=0; i<n; i++) {
+        int tmp;
+        cin>>tmp;
+        v.push_back(tmp);
+    }
+    int x; cin>>x;
+    v.erase(v.begin() + x-1);
+    int a,b; cin>>a>>b;
+    v.erase(v.begin()+a-1, v.begin()+b-1);
+    cout<<n-1-abs(a-b)<<endl;
+    for (int num : v) {
+        cout << num << " ";
+    }
+    return 0;
+}
