@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    map<string,int> m;
+    
+    int Q; cin >> Q;
+    
+    for (int i=0; i<Q; i++){
+        int a; string b; cin >> a >> b;
+        if (a==1){
+            int y; cin >> y;
+            m[b] += y;
+        }
+        if (a==2){
+            m.erase(b);
+        }
+        if (a==3){
+            map<string,int>::iterator itr=m.find(b);
+            if (itr==m.end()) cout << 0 << endl;
+            else cout << m[b] << endl;
+        }
+        }   
+    return 0;
+}  
